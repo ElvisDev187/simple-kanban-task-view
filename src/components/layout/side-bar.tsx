@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 
 function Sidebar() {
   return (
-    <div className="p-4 bg-white border border-[#1D2939]/10 rounded-r-lg border-t-0 w-[70px]">
+    <div className="p-4 bg-white border border-[#1D2939]/10 rounded-r-lg border-t-0 w-[70px] hidden lg:block">
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col gap-[14px]">
           <button className="flex items-center justify-center" type="button">

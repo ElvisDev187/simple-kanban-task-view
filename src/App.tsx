@@ -4,13 +4,13 @@ import ColumnTilte from "./components/main/column-title";
 
 function App() {
   return (
-    <main className="h-full grid grid-cols-[auto_1fr]">
+    <main className="h-full grid lg:grid-cols-[auto_1fr]">
       <Sidebar />
       <section className="h-full w-full grid grid-rows-[48px_1fr]">
         <Navbar />
-        <div className="grid grid-rows-[auto_1fr] gap-8 h-full px-40 py-8">
+        <div className="grid grid-rows-[auto_1fr] gap-8 h-full lg:px-40 lg:py-8 px-5 py-2">
           <div className="flex items-center justify-between">
-            <h1 className="font-inter font-semibold text-gray-800 text-2xl">
+            <h1 className="font-inter font-semibold text-gray-800 lg:text-2xl text-lg">
               Your tasks
             </h1>
             <div className="flex items-center gap-4">
@@ -28,7 +28,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-x-8">
+          <div className="grid lg:grid-cols-3 grid-cols-[repeat(3,384px)] gap-x-8 overflow-auto">
             <div className="">
               <ColumnTilte title="TO DO" />
             </div>
