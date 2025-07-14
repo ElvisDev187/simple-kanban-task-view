@@ -1,6 +1,6 @@
 import Navbar from "./components/layout/nav-bar";
 import Sidebar from "./components/layout/side-bar";
-import ColumnTilte from "./components/main/column-title";
+import TaskList from "./components/main/task-list";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Sidebar />
       <section className="h-full w-full grid grid-rows-[48px_1fr]">
         <Navbar />
-        <div className="grid grid-rows-[auto_1fr] gap-8 h-full lg:px-40 lg:py-8 px-5 py-2">
+        <div className="grid grid-rows-[auto_1fr] gap-8 h-full xl:px-28 xl:py-8 px-5 py-2">
           <div className="flex items-center justify-between">
             <h1 className="font-inter font-semibold text-gray-800 lg:text-2xl text-lg">
               Your tasks
@@ -28,17 +28,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="grid lg:grid-cols-3 grid-cols-[repeat(3,384px)] gap-x-8 overflow-auto">
-            <div className="">
-              <ColumnTilte title="TO DO" />
-            </div>
-            <div className="">
-              <ColumnTilte title="DOING" />
-            </div>
-            <div className="">
-              <ColumnTilte title="DONE" />
-            </div>
-          </div>
+          <TaskList />
         </div>
       </section>
     </main>
