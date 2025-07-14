@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.tsx";
-import TaskContextProvider from "./store/task-provider.tsx";
-import type { Task } from "./types/task.ts";
+import "@/index.css";
+import App from "@/App.tsx";
+import TaskContextProvider from "@/store/task-provider.tsx";
+import type { Task } from "@/types/task.ts";
 
 const initialTasks = [
   {

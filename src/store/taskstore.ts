@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useStore, type StoreApi } from "zustand";
-import type { Task } from "../types";
+import type { Task } from "@/types";
 export interface TaskState {
     tasks: Task[];  
 }

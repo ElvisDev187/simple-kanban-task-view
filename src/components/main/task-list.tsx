@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTaskStore } from "../../store/taskstore";
+import { useTaskStore } from "@/store/taskstore";
 import Column from "./colum";
 import ColumnTilte from "./column-title";
 import TaskCard from "./task-card";
@@ -9,7 +9,7 @@ import {
   type DragEndEvent,
   type DragStartEvent,
 } from "@dnd-kit/core";
-import type { Task } from "../../types";
+import type { Task } from "@/types";
 function TaskList() {
   const [activeId, setActiveId] = useState<string | number | null>(null);
   const tasks = useTaskStore((state) => state.tasks);

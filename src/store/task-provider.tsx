@@ -1,6 +1,6 @@
 import { createStore } from "zustand";
 import { useState, type PropsWithChildren } from "react";
-import type { Task } from "../types";
+import type { Task } from "@/types";
 import { TaskContext, type TaskAction, type TaskState } from "./taskstore";
 
 type TaskContextProviderProps = PropsWithChildren & {
