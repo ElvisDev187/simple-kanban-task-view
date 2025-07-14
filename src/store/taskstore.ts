@@ -8,8 +8,11 @@ export interface TaskState {
 export interface TaskAction {
     addTask: (task: Task) => void;
     updateTask: (task: Task) => void;
+    setTasks: (tasks: Task[]) => void;
     deleteTask: (taskId: string) => void;
     moveTask: (taskId: string, newStatus: Task["status"]) => void;
+    reorderTasks: (status: Task["status"], reorderedTasks: Task[]) => void;
+    insertTaskAtPosition: (taskId: string, newStatus: Task["status"], targetTaskId: string, insertAfter: boolean) => void;
 }
 
 export const TaskContext = createContext<StoreApi<TaskState & TaskAction> | undefined>(
