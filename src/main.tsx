@@ -9,8 +9,9 @@ const initialTasks = [
   {
     id: "1",
     title: "Task 1",
-    description: "Description 1",
-    tags: ["tag1", "tag2"],
+    description:
+      "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt provident voluptas quos ut! Ratione cumque dicta aperiam eos voluptatem nostrum, ducimus quod fugit nisi quisquam, officiis animi voluptate deserunt doloribus!",
+    tags: ["Design", "Backend"],
     subtasks: [
       { id: "1", title: "Subtask 1", isCompleted: false },
       { id: "2", title: "Subtask 2", isCompleted: false },
