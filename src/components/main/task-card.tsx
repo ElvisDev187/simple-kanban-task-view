@@ -2,6 +2,7 @@ import { type Task } from "@/types";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import DropIndicator from "./drop-indicator";
+import CustomCheckbox from "./custom-checkbox";
 
 interface TaskCardProps {
   task: Task;
@@ -65,15 +66,33 @@ const TaskBody = ({ task }: { task: Task }) => {
     }
   };
   return (
-    <div className="flex flex-col gap-1.5">
-      <h3 className="font-inter font-bold text-[#1D2939] text-lg">
-        {task.title}
-      </h3>
-      <p className="font-inter font-medium text-sm text-[#1D2939]/60 p-0  line-clamp-3">
-        {task.description}
-      </p>
+    <div className="flex flex-col gap-5">
+      <div className="flex gap-1 flex-col">
+        <h3 className="font-inter font-bold text-[#1D2939] text-lg">
+          {task.title}
+        </h3>
+        <p className="font-inter font-medium text-sm text-[#1D2939]/60 p-0  line-clamp-3">
+          {task.description}
+        </p>
+      </div>
+      {task.subtasks && task.subtasks.length > 0 ? (
+        <div className="">
+          <h3 className="font-inter font-medium text-[13px] text-[#222222]/50 mb-3">
+            Sub Tasks
+          </h3>
+          <div className="flex flex-col gap-3">
+            {task.subtasks.slice(0, 2).map((subtask) => (
+              <CustomCheckbox
+                key={subtask.id}
+                label={subtask.title}
+                initialChecked={subtask.isCompleted}
+              />
+            ))}
+          </div>
+        </div>
+      ) : null}
       {task.tags && task.tags.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-1">
+        <div className="flex flex-wrap gap-2">
           {task.tags.map((tag) => (
             <span
               key={tag}

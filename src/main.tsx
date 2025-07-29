@@ -13,7 +13,7 @@ const initialTasks = [
       "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt provident voluptas quos ut! Ratione cumque dicta aperiam eos voluptatem nostrum, ducimus quod fugit nisi quisquam, officiis animi voluptate deserunt doloribus!",
     tags: ["Design", "Backend"],
     subtasks: [
-      { id: "1", title: "Subtask 1", isCompleted: false },
+      { id: "1", title: "Subtask 1", isCompleted: true },
       { id: "2", title: "Subtask 2", isCompleted: false },
     ],
     links: ["link1", "link2"],
@@ -27,7 +27,7 @@ const initialTasks = [
     tags: ["tag3", "tag4"],
     subtasks: [
       { id: "3", title: "Subtask 3", isCompleted: false },
-      { id: "4", title: "Subtask 4", isCompleted: false },
+      { id: "4", title: "Subtask 4", isCompleted: true },
     ],
     links: ["link3", "link4"],
     images: ["image3", "image4"],
@@ -39,7 +39,7 @@ const initialTasks = [
     description: "Description 3",
     tags: ["tag5", "tag6"],
     subtasks: [
-      { id: "5", title: "Subtask 5", isCompleted: false },
+      { id: "5", title: "Subtask 5", isCompleted: true },
       { id: "6", title: "Subtask 6", isCompleted: false },
     ],
     links: ["link5", "link6"],

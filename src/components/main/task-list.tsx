@@ -2,7 +2,15 @@ import { useTasks } from "@/hooks/useTask";
 import Column from "./colum";
 import ColumnTilte from "./column-title";
 import TaskCard from "./task-card";
-import { closestCenter, DndContext, DragOverlay } from "@dnd-kit/core";
+import {
+  closestCenter,
+  DndContext,
+  DragOverlay,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
@@ -19,23 +27,35 @@ function TaskList() {
     donetasks,
   } = useTasks();
 
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    }),
+    useSensor(KeyboardSensor)
+  );
+
   return (
     <DndContext
       collisionDetection={closestCenter}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       onDragCancel={handleDragCancel}
+      sensors={sensors}
     >
-      <div className="grid lg:grid-cols-3 grid-cols-[repeat(3,384px)] gap-x-8 overflow-auto">
+      <div className="grid lg:grid-cols-3 grid-cols-[repeat(3,384px)] gap-x-4 overflow-auto">
         <SortableContext
           items={todotasks.map((task) => task.id)}
           strategy={verticalListSortingStrategy}
         >
           <Column id="todo">
             <ColumnTilte title="TO DO" />
-            {todotasks.map((task) => (
-              <TaskCard key={task.id} task={task} />
-            ))}
+            <div className="column overflow-y-auto max-h-[calc(100vh_-_126px)]">
+              {todotasks.map((task) => (
+                <TaskCard key={task.id} task={task} />
+              ))}
+            </div>
           </Column>
         </SortableContext>
 
@@ -45,9 +65,11 @@ function TaskList() {
         >
           <Column id="inProgress">
             <ColumnTilte title="DOING" />
-            {doingtasks.map((task) => (
-              <TaskCard key={task.id} task={task} />
-            ))}
+            <div className="column overflow-y-auto max-h-[calc(100vh_-_126px)]">
+              {doingtasks.map((task) => (
+                <TaskCard key={task.id} task={task} />
+              ))}
+            </div>
           </Column>
         </SortableContext>
 
@@ -57,9 +79,11 @@ function TaskList() {
         >
           <Column id="done">
             <ColumnTilte title="DONE" />
-            {donetasks.map((task) => (
-              <TaskCard key={task.id} task={task} />
-            ))}
+            <div className="column overflow-y-auto max-h-[calc(100vh_-_126px)] ">
+              {donetasks.map((task) => (
+                <TaskCard key={task.id} task={task} />
+              ))}
+            </div>
           </Column>
         </SortableContext>
       </div>

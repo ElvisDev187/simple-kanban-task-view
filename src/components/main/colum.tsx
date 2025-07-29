@@ -6,7 +6,7 @@ function Column(props: PropsWithChildren<{ id: string }>) {
 
   return (
     <div
-      className={`space-y-4 min-h-[200px] p-2 rounded-lg transition-colors max-h-full overflow-y-auto max-w-xs ${
+      className={`space-y-4  w-full p-2 rounded-lg transition-colors   max-w-xs ${
         isOver
           ? "bg-blue-50 border-2 border-blue-200 border-dashed"
           : "bg-transparent"

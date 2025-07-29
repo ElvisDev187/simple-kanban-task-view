@@ -61,10 +61,12 @@
 body {
     background-color: var(--color-ligth-gray);
     height: 100vh;
+    max-height: 100vh;
 }
 
 #root {
     height: 100%;
+    max-height: 100%;
 }
 
 
@@ -74,4 +76,33 @@ body {
 
 .card {
     box-shadow: 0px 0.5px 2px rgba(16, 24, 40, 0.3);
+}
+
+.column{
+    /* Removed 'scrollbar-gutter' for Safari compatibility */
+    padding-right: 4px; /* Fallback to ensure space for scrollbar */
+}
+
+/* For the entire scrollbar */
+ .column::-webkit-scrollbar {
+    margin-left: 3px;
+      width: 6px; /* Adjust width for vertical scrollbar */
+  height: 6px; /* Adjust height for horizontal scrollbar */
+}
+
+/* For the scrollbar track */
+.column::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* For the scrollbar thumb */
+.column::-webkit-scrollbar-thumb {
+  background: #b9e6f9;
+  border-radius: 10px;
+}
+
+/* On hover */
+.column::-webkit-scrollbar-thumb:hover {
+  background: #80dbff;
 }
